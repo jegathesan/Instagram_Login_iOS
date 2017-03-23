@@ -45,9 +45,9 @@ You will get access token in delegate method
 	    [self getUserInformation:accessToken];
 	}
 
-Sample to get user information using Access Token
+Sample code to get user information using Access Token
 
-	NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
     NSString *endUrl = [NSString stringWithFormat:@"https://api.instagram.com/v1/users/self/?access_token=%@",accessToken];
     NSURL *url = [NSURL URLWithString:endUrl];
@@ -69,5 +69,6 @@ Sample to get user information using Access Token
 
 Reference URL
 
-    API End Points : https://www.instagram.com/developer/endpoints/
-    Authentication : https://www.instagram.com/developer/authentication/
+API End Points : https://www.instagram.com/developer/endpoints/
+
+Authentication : https://www.instagram.com/developer/authentication/
