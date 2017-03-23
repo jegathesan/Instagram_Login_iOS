@@ -1,9 +1,9 @@
-# Instagram_Login_iOS
+## Instagram_Login_iOS
 Instagram Login iOS is useful for you if you're building an iOS app that requires Instagram authentication. Using this SDK you can authenticate the users in Instagram and receive the ACCESS_TOKEN. This token can be used for any further API Requests (Post, Media, Followers etc)
-
+    
 Let's get start
 
-# Register Application in Instagram
+## Register Application in Instagram
 
 In order to register your application, you must have an Instagram account. If you don’t have an Instagram account create a new one.
 
@@ -22,52 +22,58 @@ In order to register your application, you must have an Instagram account. If yo
 ![Client Id](https://github.com/jegathesan/Instagram_Login_iOS/blob/master/help_clientid.png)
 
 
-# Integrate into your iOS Application
+## Integrate into your iOS Application
 
 Launch the login dialog
-
-	InstagramLoginVC *instaLogVC = [[InstagramLoginVC alloc] initWithNibName:@"InstagramLoginVC" bundle:nil];
-    instaLogVC.scope = @"basic"; //Permissions ask to user 
-    instaLogVC.redirectURL = @"http://localhost/instagramlogin"; //Configured in Instagram
-    instaLogVC.cliendId = @"YOUR_CLIENT_ID";
-    instaLogVC.delegate = self;
-    [self presentViewController:instaLogVC animated:YES completion:nil];
+    
+```objectiveC
+InstagramLoginVC *instaLogVC = [[InstagramLoginVC alloc] initWithNibName:@"InstagramLoginVC" bundle:nil];
+instaLogVC.scope = @"basic"; //Permissions ask to user 
+instaLogVC.redirectURL = @"http://localhost/instagramlogin"; //Configured in Instagram
+instaLogVC.cliendId = @"YOUR_CLIENT_ID";
+instaLogVC.delegate = self;
+[self presentViewController:instaLogVC animated:YES completion:nil];
+```
 
 If you want more scope access then build a scope as
 
     @"likes+comments+relationships"
 
 You will get access token in delegate method
-
-    #pragma mark - InstagramLogin Delegates
-	- (void)didGetAccessToken:(NSString *)accessToken{
-	    NSLog(@"Access Token : %@", accessToken);
-	    [self getUserInformation:accessToken];
-	}
+  
+```objectiveC
+#pragma mark - InstagramLogin Delegates
+- (void)didGetAccessToken:(NSString *)accessToken{
+NSLog(@"Access Token : %@", accessToken);
+[self getUserInformation:accessToken];
+}
+```
 
 Sample code to get user information using Access Token
 
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
-    NSString *endUrl = [NSString stringWithFormat:@"https://api.instagram.com/v1/users/self/?access_token=%@",accessToken];
-    NSURL *url = [NSURL URLWithString:endUrl];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
-                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                                       timeoutInterval:60.0];
-    
-    [request setHTTPMethod:@"GET"];
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        if (error == nil) {
-            NSDictionary *userDetails = [NSJSONSerialization JSONObjectWithData:data
-                                                                        options:kNilOptions
-                                                                          error:&error];
-            NSLog(@"User Details: %@", userDetails);
-        }
-    }];
-    
-    [dataTask resume];
+```objectivC
+NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+NSString *endUrl = [NSString stringWithFormat:@"https://api.instagram.com/v1/users/self/?access_token=%@",accessToken];
+NSURL *url = [NSURL URLWithString:endUrl];
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
+						   cachePolicy:NSURLRequestUseProtocolCachePolicy
+					       timeoutInterval:60.0];
 
-Reference URL
+[request setHTTPMethod:@"GET"];
+NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+if (error == nil) {
+    NSDictionary *userDetails = [NSJSONSerialization JSONObjectWithData:data
+								options:kNilOptions
+								  error:&error];
+    NSLog(@"User Details: %@", userDetails);
+}
+}];
+
+[dataTask resume];
+```
+
+### Reference URL
 
 API End Points : https://www.instagram.com/developer/endpoints/
 
