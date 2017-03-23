@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InstagramLoginVC">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="aRq-K6-Cnw" id="oTD-bA-whx"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MwU-WZ-LLF">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OgP-89-OrB">
+                            <rect key="frame" x="266" y="26" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="MTl-TT-YXg"/>
+                                <constraint firstAttribute="width" constant="44" id="wkA-hM-tEU"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                            <state key="normal" image="close.png"/>
+                            <connections>
+                                <action selector="closeWindow:" destination="-1" eventType="touchUpInside" id="CXE-Tv-amx"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INSTAGRAM LOGIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruu-UV-Kh2">
+                            <rect key="frame" x="54" y="38" width="212" height="20.5"/>
+                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="OgP-89-OrB" secondAttribute="bottom" constant="4" id="E92-gI-kEy"/>
+                        <constraint firstItem="ruu-UV-Kh2" firstAttribute="centerY" secondItem="OgP-89-OrB" secondAttribute="centerY" id="awi-KM-gez"/>
+                        <constraint firstItem="ruu-UV-Kh2" firstAttribute="leading" secondItem="MwU-WZ-LLF" secondAttribute="leading" constant="54" id="biM-8i-RGj"/>
+                        <constraint firstAttribute="trailing" secondItem="OgP-89-OrB" secondAttribute="trailing" constant="10" id="dt8-oH-7SZ"/>
+                        <constraint firstItem="OgP-89-OrB" firstAttribute="leading" secondItem="ruu-UV-Kh2" secondAttribute="trailing" id="hvZ-rV-WrS"/>
+                        <constraint firstAttribute="height" constant="74" id="zhA-tV-1Vq"/>
+                    </constraints>
+                </view>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRq-K6-Cnw">
+                    <rect key="frame" x="0.0" y="75" width="320" height="493"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </webView>
+            </subviews>
+            <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="aRq-K6-Cnw" secondAttribute="bottom" id="CbO-GP-7Ty"/>
+                <constraint firstItem="aRq-K6-Cnw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="E1n-73-JZB"/>
+                <constraint firstItem="MwU-WZ-LLF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="EGF-2i-A3D"/>
+                <constraint firstAttribute="trailing" secondItem="aRq-K6-Cnw" secondAttribute="trailing" id="TRr-Mj-Mcj"/>
+                <constraint firstItem="MwU-WZ-LLF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZGc-w6-3iF"/>
+                <constraint firstItem="aRq-K6-Cnw" firstAttribute="top" secondItem="MwU-WZ-LLF" secondAttribute="bottom" constant="1" id="sTz-91-Wgl"/>
+                <constraint firstAttribute="trailing" secondItem="MwU-WZ-LLF" secondAttribute="trailing" id="xvB-LK-3Qj"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="close.png" width="50" height="50"/>
+    </resources>
+</document>
