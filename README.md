@@ -3,7 +3,7 @@ Instagram Login iOS is useful for you if you're building an iOS app that require
 
 Let's get start
 
-# Register Applicatoin in Instagram
+# Register Application in Instagram
 
 In order to register your application, you must have an Instagram account. If you don’t have an Instagram account create a new one.
 
@@ -12,6 +12,7 @@ In order to register your application, you must have an Instagram account. If yo
 	3. Fill the information in Details Tab i.e, Application Name, Redirect url, Description etc. the "Redirect url” specifies where you want the users to be redirected to when they authorise the application.
 	4. In Security Tab un check the "Disable implicit OAuth"
 	5. You can get a Client Id after application has registered successfully.
+	![Client Id](https://github.com/jegathesan/Instagram_Login_iOS/blob/master/help_clientid.png)
 
 
 # Integrate into your iOS Application
