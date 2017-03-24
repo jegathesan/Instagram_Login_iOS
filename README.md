@@ -44,14 +44,14 @@ You will get access token in delegate method
 ```objectiveC
 #pragma mark - InstagramLogin Delegates
 - (void)didGetAccessToken:(NSString *)accessToken{
-NSLog(@"Access Token : %@", accessToken);
-[self getUserInformation:accessToken];
+    NSLog(@"Access Token : %@", accessToken);
+    [self getUserInformation:accessToken];
 }
 ```
 
 Sample code to get user information using Access Token
 
-```objectivC
+```objectiveC
 NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
 NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
 NSString *endUrl = [NSString stringWithFormat:@"https://api.instagram.com/v1/users/self/?access_token=%@",accessToken];
